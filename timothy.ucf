@@ -1,0 +1,61 @@
+
+
+NET "digit_select[0]" LOC = D8;
+NET "digit_select[1]" LOC = E8;
+NET "digit_select[2]" LOC = F9;
+NET "digit_select[3]" LOC = F10;
+NET "digit_select[4]" LOC = E10;
+NET "digit_select[5]" LOC = D9;
+NET "digit_select[6]" LOC = P12;
+NET "digit_select[7]" LOC = N12;
+
+
+NET "digit_select[0]" IOSTANDARD = LVCMOS33;
+NET "digit_select[1]" IOSTANDARD = LVCMOS33;
+NET "digit_select[2]" IOSTANDARD = LVCMOS33;
+NET "digit_select[3]" IOSTANDARD = LVCMOS33;
+NET "digit_select[4]" IOSTANDARD = LVCMOS33;
+NET "digit_select[5]" IOSTANDARD = LVCMOS33;
+NET "digit_select[6]" IOSTANDARD = LVCMOS33;
+NET "digit_select[7]" IOSTANDARD = LVCMOS33;
+
+
+NET "segments[1]" LOC = C7;
+NET "segments[2]" LOC = E6;
+NET "segments[3]" LOC = C5;
+NET "segments[4]" LOC = F7;
+NET "segments[5]" LOC = D6;
+NET "segments[6]" LOC = E7;
+NET "segments[7]" LOC = D5;
+
+
+NET "segments[1]" IOSTANDARD = LVCMOS33;
+NET "segments[2]" IOSTANDARD = LVCMOS33;
+NET "segments[3]" IOSTANDARD = LVCMOS33;
+NET "segments[4]" IOSTANDARD = LVCMOS33;
+NET "segments[5]" IOSTANDARD = LVCMOS33;
+NET "segments[6]" IOSTANDARD = LVCMOS33;
+NET "segments[7]" IOSTANDARD = LVCMOS33;
+
+
+NET "clk" LOC = T8;
+NET "dp" LOC = C6;
+NET "nrst" LOC = L3;
+
+
+NET "clk" IOSTANDARD = LVCMOS33;
+NET "dp" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated IO constraints 
+
+NET "leds[0]" IOSTANDARD = LVCMOS33;
+NET "leds[1]" IOSTANDARD = LVCMOS33;
+NET "leds[2]" IOSTANDARD = LVCMOS33;
+NET "leds[3]" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "leds[0]" LOC = P4;
+NET "leds[1]" LOC = N5;
+NET "leds[2]" LOC = P5;
+NET "leds[3]" LOC = M6;

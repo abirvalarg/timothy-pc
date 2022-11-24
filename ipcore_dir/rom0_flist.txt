@@ -1,0 +1,16 @@
+# Output products list for <rom0>
+_xmsgs/pn_parser.xmsgs
+rom0/blk_mem_gen_v7_3_readme.txt
+rom0/doc/blk_mem_gen_v7_3_vinfo.html
+rom0/doc/pg058-blk-mem-gen.pdf
+rom0.asy
+rom0.gise
+rom0.mif
+rom0.ngc
+rom0.vhd
+rom0.vho
+rom0.xco
+rom0.xise
+rom0_flist.txt
+rom0_xmdf.tcl
+summary.log
