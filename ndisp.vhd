@@ -33,7 +33,7 @@ begin
 			regs(4) <= "100000";
 			regs(5) <= "100000";
 			regs(6) <= "100000";
-			regs(7) <= "000000";
+			regs(7) <= "100000";
 		elsif inter_clk'event and inter_clk = '1' and wr = '1' then
 			regs(id) <= data_bus(5 downto 0);
 		end if;

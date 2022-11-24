@@ -29,23 +29,9 @@ component rom0 is
 	);
 end component;
 
-component ndisp is
-	port(
-		inter_clk, io_clk, wr, nrst: in std_logic;
-		addr: in std_logic_vector(2 downto 0);
-		data_bus: in std_logic_vector(7 downto 0);
-		segments: out std_logic_vector(1 to 7);
-		dp: out std_logic;
-		digit_sel: out std_logic_vector(0 to 7)
-	);
-end component;
-
 signal write_mem: std_logic;
 signal addr: std_logic_vector(15 downto 0);
 signal dout, din: std_logic_vector(7 downto 0);
-signal seg: std_logic_vector(1 to 7);
-signal dp: std_logic;
-signal ds: std_logic_vector(0 to 7);
 
 begin
 	cpu: vcpu816 port map(
@@ -56,18 +42,6 @@ begin
 		write_mem => write_mem,
 		dout => dout,
 		addr => addr
-	);
-	
-	ndisp_inst: ndisp port map(
-		inter_clk => clk,
-		io_clk => clk,
-		wr => write_mem,
-		nrst => '1',
-		addr => addr(2 downto 0),
-		data_bus => dout,
-		segments => seg,
-		dp => dp,
-		digit_sel => ds
 	);
 	
 	rom0_inst: rom0 port map(

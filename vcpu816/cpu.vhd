@@ -154,6 +154,10 @@ begin
 				end if;
 			end if;
 			
+			if cmd_set_res = '1' then
+				res_reg <= alu_res;
+			end if;
+			
 			if cmd_set_alu_flags = '1' then
 				f_sign <= f_res_sign;
 				f_carry <= f_res_carry;

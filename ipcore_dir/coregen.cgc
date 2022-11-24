@@ -25,7 +25,7 @@
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_BYTE_WRITE_ENABLE">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.BYTE_SIZE">9</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.ALGORITHM">Fixed_Primitives</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PRIMITIVE">8kx2</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PRIMITIVE">2kx9</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.ASSUME_SYNCHRONOUS_CLK">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.WRITE_WIDTH_A">8</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.WRITE_DEPTH_A">2048</spirit:configurableElementValue>
@@ -46,7 +46,7 @@
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.REGISTER_PORTB_OUTPUT_OF_SOFTECC">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.PIPELINE_STAGES">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.LOAD_INIT_FILE">true</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COE_FILE">/home/abir/projects/Timothy/rom0.coe</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COE_FILE">/home/abir/projects/Timothy/timothy-pc/rom0.coe</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.FILL_REMAINING_MEMORY_LOCATIONS">true</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.REMAINING_MEMORY_LOCATIONS">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_RSTA_PIN">false</spirit:configurableElementValue>
@@ -72,7 +72,7 @@
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.MEM_FILE">no_Mem_file_loaded</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_FAMILY">spartan6</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_XDEVICEFAMILY">spartan6</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ELABORATION_DIR">/home/abir/projects/Timothy/timothy/ipcore_dir/tmp/_cg/</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ELABORATION_DIR">/home/abir/projects/Timothy/timothy-pc/ipcore_dir/tmp/_cg/</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_INTERFACE_TYPE">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_AXI_TYPE">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_AXI_SLAVE_TYPE">0</spirit:configurableElementValue>
@@ -81,7 +81,7 @@
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_MEM_TYPE">3</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_BYTE_SIZE">9</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_ALGORITHM">0</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PRIM_TYPE">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_PRIM_TYPE">3</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_LOAD_INIT_FILE">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_INIT_FILE_NAME">rom0.mif</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_DEFAULT_DATA">1</spirit:configurableElementValue>
@@ -174,16 +174,16 @@
                   <xilinx:file>
                      <xilinx:name>./rom0.mif</xilinx:name>
                      <xilinx:userFileType>mif</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:22:51 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0x82232B02</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:timeStamp>Thu Nov 24 18:15:51 GMT 2022</xilinx:timeStamp>
+                     <xilinx:checkSum>0xC4989E65</xilinx:checkSum>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
                      <xilinx:name>./summary.log</xilinx:name>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:22:51 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0x3DD89985</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:timeStamp>Thu Nov 24 18:15:51 GMT 2022</xilinx:timeStamp>
+                     <xilinx:checkSum>0x8C12DE96</xilinx:checkSum>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -191,16 +191,16 @@
                   <xilinx:file>
                      <xilinx:name>./rom0.mif</xilinx:name>
                      <xilinx:userFileType>mif</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:22:53 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0x82232B02</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:timeStamp>Thu Nov 24 18:15:52 GMT 2022</xilinx:timeStamp>
+                     <xilinx:checkSum>0xC4989E65</xilinx:checkSum>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
                      <xilinx:name>./summary.log</xilinx:name>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:22:53 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0x3DD89985</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:timeStamp>Thu Nov 24 18:15:52 GMT 2022</xilinx:timeStamp>
+                     <xilinx:checkSum>0x8C12DE96</xilinx:checkSum>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -208,9 +208,9 @@
                   <xilinx:file>
                      <xilinx:name>./rom0.xco</xilinx:name>
                      <xilinx:userFileType>xco</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:22:53 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0xBA5031BD</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:timeStamp>Thu Nov 24 18:15:52 GMT 2022</xilinx:timeStamp>
+                     <xilinx:checkSum>0x4A59580D</xilinx:checkSum>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -221,7 +221,7 @@
                      <xilinx:userFileType>txt</xilinx:userFileType>
                      <xilinx:timeStamp>Sun Oct 13 18:11:47 GMT 2013</xilinx:timeStamp>
                      <xilinx:checkSum>0xF95F2A26</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
                      <xilinx:name>./rom0/doc/blk_mem_gen_v7_3_vinfo.html</xilinx:name>
@@ -229,7 +229,7 @@
                      <xilinx:userFileType>unknown</xilinx:userFileType>
                      <xilinx:timeStamp>Sun Oct 13 18:11:47 GMT 2013</xilinx:timeStamp>
                      <xilinx:checkSum>0x702C7FA8</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
                      <xilinx:name>./rom0/doc/pg058-blk-mem-gen.pdf</xilinx:name>
@@ -237,7 +237,7 @@
                      <xilinx:userFileType>pdf</xilinx:userFileType>
                      <xilinx:timeStamp>Sun Oct 13 18:11:47 GMT 2013</xilinx:timeStamp>
                      <xilinx:checkSum>0x39526EEE</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -248,9 +248,9 @@
                   <xilinx:file>
                      <xilinx:name>./rom0.ngc</xilinx:name>
                      <xilinx:userFileType>ngc</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:15 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0x5EDB3E11</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:11 GMT 2022</xilinx:timeStamp>
+                     <xilinx:checkSum>0xD7F972B0</xilinx:checkSum>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -264,9 +264,9 @@
                   <xilinx:file>
                      <xilinx:name>./rom0.vho</xilinx:name>
                      <xilinx:userFileType>vho</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:15 GMT 2022</xilinx:timeStamp>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:12 GMT 2022</xilinx:timeStamp>
                      <xilinx:checkSum>0xA1D0FCAC</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -274,9 +274,9 @@
                   <xilinx:file>
                      <xilinx:name>./rom0.vhd</xilinx:name>
                      <xilinx:userFileType>vhdl</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:16 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0xF18E0931</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:12 GMT 2022</xilinx:timeStamp>
+                     <xilinx:checkSum>0xBE78E198</xilinx:checkSum>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -285,9 +285,9 @@
                      <xilinx:name>./rom0/doc/blk_mem_gen_v7_3_vinfo.html</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:16 GMT 2022</xilinx:timeStamp>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:12 GMT 2022</xilinx:timeStamp>
                      <xilinx:checkSum>0x702C7FA8</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -295,23 +295,23 @@
                   <xilinx:file>
                      <xilinx:name>./rom0.asy</xilinx:name>
                      <xilinx:userFileType>asy</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:17 GMT 2022</xilinx:timeStamp>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:13 GMT 2022</xilinx:timeStamp>
                      <xilinx:checkSum>0x58D1F84A</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
                      <xilinx:name>./rom0.mif</xilinx:name>
                      <xilinx:userFileType>mif</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:17 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0x82232B02</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:13 GMT 2022</xilinx:timeStamp>
+                     <xilinx:checkSum>0xC4989E65</xilinx:checkSum>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
                      <xilinx:name>./summary.log</xilinx:name>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:17 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0x3DD89985</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:13 GMT 2022</xilinx:timeStamp>
+                     <xilinx:checkSum>0x8C12DE96</xilinx:checkSum>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -320,9 +320,9 @@
                      <xilinx:name>./rom0_xmdf.tcl</xilinx:name>
                      <xilinx:userFileType>tclXmdf</xilinx:userFileType>
                      <xilinx:userFileType>tcl</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:17 GMT 2022</xilinx:timeStamp>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:13 GMT 2022</xilinx:timeStamp>
                      <xilinx:checkSum>0x66A16AE4</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -331,17 +331,17 @@
                      <xilinx:name>./rom0.gise</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>gise</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:18 GMT 2022</xilinx:timeStamp>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:15 GMT 2022</xilinx:timeStamp>
                      <xilinx:checkSum>0xAF3381DF</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
                      <xilinx:name>./rom0.xise</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>xise</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:18 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0x0C9078A2</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:15 GMT 2022</xilinx:timeStamp>
+                     <xilinx:checkSum>0xA531ED1F</xilinx:checkSum>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -350,25 +350,25 @@
                      <xilinx:name>./_xmsgs/pn_parser.xmsgs</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>unknown</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:20 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0x9FEFD6CD</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:16 GMT 2022</xilinx:timeStamp>
+                     <xilinx:checkSum>0xF2664E0F</xilinx:checkSum>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
                      <xilinx:name>./rom0.gise</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>gise</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:20 GMT 2022</xilinx:timeStamp>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:16 GMT 2022</xilinx:timeStamp>
                      <xilinx:checkSum>0x9E6AC52F</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
                      <xilinx:name>./rom0.xise</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>xise</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:20 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0xF8DBAFEC</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:16 GMT 2022</xilinx:timeStamp>
+                     <xilinx:checkSum>0x352F49DD</xilinx:checkSum>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>
@@ -381,9 +381,9 @@
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>txtFlist</xilinx:userFileType>
                      <xilinx:userFileType>txt</xilinx:userFileType>
-                     <xilinx:timeStamp>Thu Nov 24 14:23:20 GMT 2022</xilinx:timeStamp>
+                     <xilinx:timeStamp>Thu Nov 24 18:16:16 GMT 2022</xilinx:timeStamp>
                      <xilinx:checkSum>0x3235E52B</xilinx:checkSum>
-                     <xilinx:generationId>generationID_152152107</xilinx:generationId>
+                     <xilinx:generationId>generationID_2090479949</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
                <xilinx:fileSet>

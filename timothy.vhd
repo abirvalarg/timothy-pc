@@ -27,6 +27,13 @@ component vcpu816 is
 	);
 end component;
 
+component cpu_psc is
+	port(
+		clk_in: in std_logic;
+		clk_out: out std_logic
+	);
+end component;
+
 component prescaller is
 	port(
 		clk_in: in std_logic;
@@ -53,7 +60,7 @@ component ndisp is
 	);
 end component;
 
-signal write_mem, io_clk, sel_ndisp, allow_start: std_logic := '0';
+signal write_mem, io_clk, cpu_clk, sel_ndisp, allow_start: std_logic := '0';
 signal din, dout, rom0_out: std_logic_vector(7 downto 0);
 signal addr: std_logic_vector(15 downto 0);
 signal mem_bank: integer range 0 to 31;
@@ -70,11 +77,16 @@ begin
 		end if;
 	end process;
 
-	leds <= addr(3 downto 0);
+	leds <= "0000";
+
+	cpu_psc_inst: cpu_psc port map(
+		clk_in => clk,
+		clk_out => cpu_clk
+	);
 
 	cpu: vcpu816 port map(
 		irq => '0',
-		clk => io_clk,
+		clk => cpu_clk,
 		nrst => nrst and allow_start,
 		din => din,
 		dout => dout,
@@ -90,7 +102,7 @@ begin
 		"00000000" when others;
 	
 	rom0_inst: rom0 port map(
-		clka => clk,
+		clka => cpu_clk,
 		addra => addr(10 downto 0),
 		douta => rom0_out
 	);
@@ -101,9 +113,9 @@ begin
 	);
 	
 	ndisp_inst: ndisp port map(
-		inter_clk => io_clk,
+		inter_clk => cpu_clk,
 		io_clk => io_clk,
-		wr => write_mem,
+		wr => sel_ndisp and write_mem,
 		nrst => nrst,
 		addr => addr(2 downto 0),
 		data_bus => dout,

@@ -96,7 +96,7 @@ END COMPONENT;
       c_load_init_file => 1,
       c_mem_type => 3,
       c_mux_pipeline_stages => 0,
-      c_prim_type => 1,
+      c_prim_type => 3,
       c_read_depth_a => 2048,
       c_read_depth_b => 2048,
       c_read_width_a => 8,

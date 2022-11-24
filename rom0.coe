@@ -1,12 +1,7 @@
 memory_initialization_radix=16;
 memory_initialization_vector=
-2,
-0,
-1,
-a,
-3,
-e,
-f8,
-4,
-fd,
-ff;
+02, 00,
+01, 01,
+50, 03,
+03, 0f, f8,
+04, fd, ff;

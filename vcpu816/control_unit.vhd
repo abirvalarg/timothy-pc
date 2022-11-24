@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity control_unit is
 	port(
@@ -61,18 +62,25 @@ begin
 	
 	set_acc <= '1' when
 		(init = '0' and irq_mode = '0' and instr = "00000001" and cycle = 5)		-- LDI
-		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 8)	-- LDA imm16
+		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 11)	-- LDA imm16
+		or (init = '0' and irq_mode = '0' and instr(7 downto 3) = "01010" and cycle = 6)	-- ALU imm8
 		else '0';
 	
-	set_alu_flags <= '0';
+	set_alu_flags <= '1' when
+		(init = '0' and irq_mode = '1' and instr(7 downto 3) = "01010" and cycle = 5)	-- ALU imm8
+		else '0';
+	
+	set_res <= '1' when
+		(init = '0' and irq_mode = '0' and instr(7 downto 3) = "01010" and cycle = 5)	-- ALU imm8
+		else '0';
 	
 	set_offset <= '1' when
 		(init = '1' and cycle = 1)
 		or (init = '1' and cycle = 5)
 		or (irq_mode = '1' and cycle = 6)
 		or (irq_mode = '1' and cycle = 9)
-		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 4)	-- LDA imm16
-		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 6)	-- LDA imm16
+		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 5)	-- LDA imm16
+		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 8)	-- LDA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 5)	-- STA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 8)	-- STA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 5)	-- JMP imm16
@@ -83,7 +91,7 @@ begin
 		(init = '1' and cycle = 8)
 		or (irq_mode = '1' and cycle = 2)
 		or (irq_mode = '1' and cycle = 11)
-		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 6)	-- LDA imm16
+		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 8)	-- LDA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 8)	-- STA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 8)	-- JMP imm16
 		else '0';
@@ -93,7 +101,7 @@ begin
 		or (init = '1' and cycle = 6)
 		or (irq_mode = '1' and cycle = 7)
 		or (irq_mode = '1' and cycle = 10)
-		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 7)	-- LDA imm16
+		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 9)	-- LDA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 9)	-- STA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 9)	-- JMP imm16
 		else '0';
@@ -102,12 +110,13 @@ begin
 		(init = '0' and irq_mode = '0' and cycle = 0)
 		or (init = '0' and irq_mode = '0' and instr = "00000001" and cycle = 3)	-- LDI
 		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 3)	-- LDA imm16
-		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 5)	-- LDA imm16
+		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 6)	-- LDA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 3)	-- STA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 6)	-- STA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 3)	-- JMP imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 6)	-- JMP imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 9)	-- JMP imm16
+		or (init = '0' and irq_mode = '0' and instr(7 downto 3) = "01010" and cycle = 3)	-- ALU imm8
 		else '0';
 	
 	set_addr <= '1' when
@@ -120,14 +129,15 @@ begin
 		or (init = '0' and irq_mode = '0' and cycle = 0)
 		or (init = '0' and irq_mode = '0' and instr = "00000001" and cycle = 3)	-- LDI
 		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 3)	-- LDA imm16
-		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 5)	-- LDA imm16
-		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 7)	-- LDA imm16
+		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 6)	-- LDA imm16
+		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 9)	-- LDA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 3)	-- STA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 6)	-- STA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 9)	-- STA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 3)	-- JMP imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 6)	-- JMP imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 9)	-- JMP imm16
+		or (init = '0' and irq_mode = '0' and instr(7 downto 3) = "01010" and cycle = 3)	-- ALU imm8
 		else '0';
 	
 	save_flags <= '0';
@@ -143,9 +153,10 @@ begin
 		or (irq_mode = '1' and cycle = 12)
 		or (init = '0' and irq_mode = '0' and instr = "00000000" and cycle = 3)	-- NOP
 		or (init = '0' and irq_mode = '0' and instr = "00000001" and cycle = 5)	-- LDI
-		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 8)	-- LDA imm16
+		or (init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 12)	-- LDA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 11)	-- STA imm16
 		or (init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 11)	-- JMP
+		or (init = '0' and irq_mode = '0' and instr(7 downto 3) = "01010" and cycle = 7)	-- ALU imm8
 		else '0';
 	
 	end_init <= '1' when init = '1' and cycle = 9 else '0';
@@ -163,17 +174,21 @@ begin
 		1 when irq_mode = '1' and cycle = 11 else
 		1 when init = '0' and irq_mode = '0' and cycle = 2 else
 		1 when init = '0' and irq_mode = '0' and instr = "00000001" and cycle = 5 else	-- LDI
-		1 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 4 else	-- LDA imm16
-		1 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 6 else	-- LDA imm16
+		1 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 5 else	-- LDA imm16
 		1 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 8 else	-- LDA imm16
+		1 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 11 else	-- LDA imm16
 		1 when init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 5 else	-- STA imm16
 		1 when init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 8 else	-- STA imm16
 		2 when init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 10 else	-- STA imm16
 		1 when init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 5 else	-- JMP
 		1 when init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 8 else	-- JMP
+		1 when init = '0' and irq_mode = '0' and instr(7 downto 3) = "01010" and cycle = 5 else	-- ALU imm8
+		3 when init = '0' and irq_mode = '0' and instr(7 downto 3) = "01010" and cycle = 6 else	-- ALU imm8
 		0;
 	
-	alu_cmd <= 0;
+	alu_cmd <=
+		to_integer(unsigned(instr(2 downto 0))) when init = '0' and irq_mode = '0' and instr(7 downto 3) = "01010" and cycle = 5 else
+		0;
 	
 	reg_sel <=
 		3 when init = '1' and cycle = 4 else
@@ -192,8 +207,8 @@ begin
 		3 when init = '0' and irq_mode = '0' and instr = "00000001" and cycle = 4 else	-- LDI
 		3 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 3 else	-- LDA imm16
 		3 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 4 else	-- LDA imm16
-		3 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 5 else	-- LDA imm16
 		3 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 6 else	-- LDA imm16
+		3 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 7 else	-- LDA imm16
 		3 when init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 3 else	-- STA imm16
 		3 when init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 4 else	-- STA imm16
 		3 when init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 6 else	-- STA imm16
@@ -204,6 +219,8 @@ begin
 		3 when init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 8 else	-- JMP
 		3 when init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 9 else	-- JMP
 		3 when init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 10 else	-- JMP
+		3 when init = '0' and irq_mode = '0' and instr(7 downto 3) = "01010" and cycle = 3 else	-- ALU imm8
+		3 when init = '0' and irq_mode = '0' and instr(7 downto 3) = "01010" and cycle = 4 else	-- ALU imm8
 		0;
 	
 	rctl_cmd <=
@@ -216,12 +233,13 @@ begin
 		2 when init = '0' and irq_mode = '0' and cycle = 1 else
 		2 when init = '0' and irq_mode = '0' and instr = "00000001" and cycle = 4 else	-- LDI
 		2 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 4 else	-- LDA imm16
-		2 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 6 else	-- LDA imm16
+		2 when init = '0' and irq_mode = '0' and instr = "00000010" and cycle = 7 else	-- LDA imm16
 		2 when init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 4 else	-- STA imm16
 		2 when init = '0' and irq_mode = '0' and instr = "00000011" and cycle = 7 else	-- STA imm16
 		2 when init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 4 else	-- JMP
 		2 when init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 8 else	-- JMP
 		5 when init = '0' and irq_mode = '0' and instr = "00000100" and cycle = 10 else	-- JMP
+		2 when init = '0' and irq_mode = '0' and instr(7 downto 3) = "01010" and cycle = 4 else	-- ALU imm8
 		0;
 
 	bus_output <=

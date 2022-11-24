@@ -1,7 +1,7 @@
 
 # PlanAhead Launch Script for Pre-Synthesis Floorplanning, created by Project Navigator
 
-create_project -name timothy -dir "/home/abir/projects/Timothy/timothy/planAhead_run_3" -part xc6slx16ftg256-2
+create_project -name timothy -dir "/home/abir/projects/Timothy/timothy-pc/planAhead_run_1" -part xc6slx16ftg256-2
 set_param project.pinAheadLayout yes
 set srcset [get_property srcset [current_run -impl]]
 set_property target_constrs_file "timothy.ucf" [current_fileset -constrset]
@@ -29,6 +29,7 @@ set_property library work $hdlfile
 set hdlfile [add_files [list {ndisp.vhd}]]
 set_property file_type VHDL $hdlfile
 set_property library work $hdlfile
+add_files [list {ipcore_dir/rom0.ngc}]
 set hdlfile [add_files [list {timothy.vhd}]]
 set_property file_type VHDL $hdlfile
 set_property library work $hdlfile
